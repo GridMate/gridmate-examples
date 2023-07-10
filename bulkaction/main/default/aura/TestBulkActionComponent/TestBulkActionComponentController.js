@@ -2,6 +2,7 @@
     handleSubmit: function (component, event, helper) {
         component.set('v.isWorking', true);
 
+        //Submit the action to the Salesforce
         let action = component.get('c.submitBulkAction');
         action.setParams({
             gridLabel: component.get('v.gridLabel'),

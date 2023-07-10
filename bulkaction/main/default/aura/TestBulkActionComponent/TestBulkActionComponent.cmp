@@ -1,23 +1,25 @@
 <aura:component implements="force:hasRecordId" controller="TestBulkActionController" access="global">
-    <aura:attribute name="relatedObjectName" type="String" access="global" />
-
+    <!-- Action properties coming from GridMate-->
+    <aura:attribute name="relatedObjectName" type="String" access="global" />    
     <aura:attribute name="gridLabel" type="String" access="global" />
     <aura:attribute name="gridName" type="String" access="global" />
     <aura:attribute name="gridCode" type="String" access="global" />
     <aura:attribute name="actionName" type="String" access="global" />
     <aura:attribute name="actionLabel" type="String" access="global" />
 
+    <!-- Soql Query coming from GridMate-->
     <aura:attribute name="query" type="String" access="global" />
 
-    <aura:attribute name="selectedItems" type="Object[]" access="global" />
-
+    <!-- Internal flag to control the spinner-->
     <aura:attribute name="isWorking" type="Boolean" access="global" />
 
     <aura:registerEvent name="onsuccess" type="gmpkg:DataGridActionEvent" />
     <aura:registerEvent name="oncancel" type="gmpkg:DataGridActionEvent" />
 
+    <!-- overlayLib API -->
     <lightning:overlayLibrary aura:id="overlayLib" />
         
+    <!-- Bulk Action Publisher -->
     <gmpkg:bulkActionPublisherLWC aura:id="bulkActionPublisher" />
     
     <div class="slds-theme_default">
