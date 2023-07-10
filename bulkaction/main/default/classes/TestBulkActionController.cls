@@ -10,7 +10,7 @@ public with sharing class TestBulkActionController {
     ) {
         String countQuery = query.replaceAll('Id', 'count()');
 
-        //Submit the job
+        //Submit the job to the action manager
         Id jobId = gmpkg.BulkActionManager.createJob(
             new gmpkg.BulkActionManager.BulkActionRequest(
                 gridLabel,
@@ -23,7 +23,7 @@ public with sharing class TestBulkActionController {
             )
         );
 
-        //Start the batch
+        //Start the batch to process all the opportunities
         Database.executeBatch(new TestBulkActionBatch(jobId, query));
         return jobId;
     }
