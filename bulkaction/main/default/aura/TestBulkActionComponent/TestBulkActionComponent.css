@@ -1,0 +1,10 @@
+.THIS .content-wrapper {
+    margin: -0.5rem;
+}
+
+.THIS .actions-wrapper {
+    margin: -1rem;
+    margin-top: 1rem;
+    display: flex;
+    justify-content: flex-end;
+}
